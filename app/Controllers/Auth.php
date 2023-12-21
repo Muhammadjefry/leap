@@ -1,5 +1,5 @@
 <?php
-//  belajar update git
+//  belajar update git // ubah lage
 namespace App\Controllers;
 
 use App\Models\Model_Auth; // Pastikan ini sesuai dengan nama file model
