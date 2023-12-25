@@ -83,22 +83,28 @@
                         <div class="col-xl-4 col-md-6 mb-4" style="text-decoration: none;z-index: 2;" id="myDiv">
                             <div class="card  shadow ">
                                 <div class="card-body">
+                                    <div class="col-12">
                                     <form>
                                         <div class="mb-3">
-                                            <h4>Uji kecepatan internet anda sebelum melanjutkan test </h4>
-                                            <p>Untuk mengetahui kecepatan internet anda, silahkan klik link di bawah ini</p>
+                                        <h6>Form UNDUH mbps</h4>
                                             <a href="https://www.speedtest.net/id" target="_blank">https://www.speedtest.net/id</a>
+                                            <input type="email" class="form-control mt-4" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-12">
+                                    <form>
+                                        <div class="mb-3">
+                                            <h6>Form UNGGAH mbps</h4>
                                             <input type="email" class="form-control mt-4" id="exampleInputEmail1" aria-describedby="emailHelp">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </form>
+                                  </div>
+                               
                                 </div>
                             </div>
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>
