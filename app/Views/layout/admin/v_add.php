@@ -4,8 +4,8 @@
 <?= $this->section('content'); ?>
 
 <div class="col-md-6 text-left text-white">
-    <h3>Total Participant</h3>
-    <h5>Male</h5>
+    <h3>User Data</h3>
+    <h5>Add User</h5>
 </div>
 
 </div>
@@ -148,12 +148,14 @@
                     </thead>
 
                     <tbody>
-                        <?php foreach ($user as $k => $v) {
-                            $nomor += 1; ?>
+                        <?php 
+                        $no = 1;
+                        foreach ($user as $k => $v) {
+                             ?>
 
 
                             <tr>
-                                <td><?php echo $nomor; ?></td>
+                                <td><?php echo $no++; ?></td>
                                 <td><?php echo $v['username']; ?></td>
                                 <td><?php echo $v['password']; ?></td>
                                 <th>

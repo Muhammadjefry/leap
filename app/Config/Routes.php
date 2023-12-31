@@ -7,4 +7,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/', 'Login::login_student');
+// app/config/Routes.php
+
 $routes->setAutoRoute(true);

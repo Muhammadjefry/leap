@@ -247,7 +247,8 @@
 
 
             $('.tutup').on('click', function() {
-                if ($('.sukses').is(":visible")) {
+                if ($('.sukses')) {
+                    // .is(":visible")
                     window.location.href = "<?php echo current_url() . "?" . $_SERVER['QUERY_STRING'] ?>";
                 }
                 $('.alert').hide();

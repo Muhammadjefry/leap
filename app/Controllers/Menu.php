@@ -1,20 +1,20 @@
 <?php
 
 namespace App\Controllers;
+// use App\Models\Model_Auth;
+use App\Models\Model_User;
+use App\Models\Model_Student;
+
 
 class Menu extends BaseController
 {
-    protected $model;
+    protected $userModel;
+    protected $studentModel;
 
     function __construct()
     {
-        $this->model = new \App\Models\Model_Auth();
-    }
-
-    // Profile
-    public function profile()
-    {
-        return view('layout/admin/v_profile');
+        $this->userModel = new Model_User();
+        $this->studentModel = new Model_Student();
     }
 
 
@@ -22,8 +22,7 @@ class Menu extends BaseController
     public function add_user()
     {
 
-        $data['user'] = $this->model->orderBy('id', 'asc')->findAll();
-        $data['nomor'] = ($this->request->getVar('page') == 1) ? '0' : $this->request->getVar('page');
+        $data['user'] = $this->userModel->orderBy('id', 'asc')->findAll();
         return view('layout/admin/v_add', $data);
     }
 
@@ -31,9 +30,26 @@ class Menu extends BaseController
     public function participant()
     {
 
-        $data['student'] = $this->model->orderBy('id')->findAll();
-        $data['nomor'] = ($this->request->getVar('page') == 1) ? '0' : $this->request->getVar('page');
+        $data['student'] = $this->studentModel->orderBy('id')->findAll();
         return view('layout/admin/v_participant', $data);
+    }
+
+
+    public function detail($id)
+    {
+        // Lakukan sesuatu dengan $id, misalnya mengambil data dari database
+        $studentModel = new \App\Models\Model_Student();
+        $data['student'] = $studentModel->find($id);
+
+        // Kemudian, tampilkan view v_participantScore dengan membawa data siswa
+        return view('layout/admin/v_participantScore', $data);
+    }
+
+
+    // Profile
+    public function profile()
+    {
+        return view('layout/admin/v_profile');
     }
 
 
@@ -68,7 +84,7 @@ class Menu extends BaseController
                 'password' => $password,
             ];
 
-            $this->model->save($data);
+            $this->userModel->save($data);
 
             $hasil['sukses'] = "Anda berhasil memasukan data";
             $hasil['eror'] = true;
@@ -84,13 +100,13 @@ class Menu extends BaseController
     // Edit
     public function edit($id)
     {
-        return json_encode($this->model->find($id));
+        return json_encode($this->userModel->find($id));
     }
 
     // Hapus
     public function hapus($id)
     {
-        $this->model->delete($id);
+        $this->userModel->delete($id);
         return redirect()->to('menu/add_user');
     }
 }

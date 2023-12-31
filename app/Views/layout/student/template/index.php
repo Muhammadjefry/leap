@@ -80,184 +80,85 @@
  ,    #0367ac  
 );">
 
-                    <div class="col-md-6 text-left text-white">
-                        <h3>Alur Test</h3>
-                        <h5>Terdapat 4 test</h5>
-                    </div>
-
-                </div>
 
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid" style="margin-bottom: 10em;">
 
-                    <!-- Content Row -->
-                    <div class="row mb-5" style="margin-top:-80px">
+                    <!-- Begin Page Content -->
+                    <?= $this->renderSection('content'); ?>
+                    <!-- End of Main Content -->
 
-                        <!-- Reading Test-->
-                        <div class="col-xl-3 col-md-6 mb-4" style="text-decoration: none;z-index: 2;" id="myDiv">
-                            <div class="card  shadow ">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class=" mb-0 mr-3  font-weight-bold text-gray-800">
-                                                <span class="h3">Test 1</span>
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 mt-2 ">
-                                                        <span>Reading</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-end">
-                                        <a href="<?= base_url('student/testing') ?>" class="btn btn-warning mt-3 text-end ">
-                                            <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
-                                        </a>
-                                    </div>
-                                </div>
+
+
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer bg-white pos">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; Leap Surabaya 2023 </span>
                             </div>
                         </div>
-
-
-
-                        <!-- Speaking Test-->
-                        <div class="col-xl-3 col-md-6 mb-4" style="text-decoration: none;" id="myDiv">
-                            <div class="card  shadow ">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class=" mb-0 mr-3  font-weight-bold text-gray-800">
-                                                <span class="h3">Test 4</span>
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 mt-2 ">
-                                                        <span>Speaking</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 d-flex justify-content-end">
-                                        <a href="index.php" onclick="removeElement()" class="btn btn-warning mt-3 text-end ">
-                                            <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- <div class="col-xl-12 col-md-12 ">
-
-
-                            <div class="card shadow ">
-                                <div class="row g-0">
-                                    <div class="col-md-4 pl-5 pt-4">
-                                        <h3>Tentang TOEFL</h3>
-                                        <hr class="pb-5">
-                                        <br>
-
-                                        <h3>Tentang Tes</h3>
-                                        <hr>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Penejelasan TOEFL </h5>
-                                            <p class="card-text">TOEFL, atau Test of English as a Foreign Language, adalah ujian standar internasional yang dirancang untuk mengukur kemampuan bahasa Inggris seseorang, khususnya bagi mereka yang bukan penutur asli. Ujian ini terdiri dari empat komponen utama, yaitu Speaking, Reading, Listening, dan Structure. Untuk mengikuti ujian TOEFL melalui aplikasi web, ada beberapa syarat dan ketentuan yang perlu dipahami dengan baik.
-                                            </p>
-                                            <h5 class="card-title">Syarat dan Ketentuan Mengikuti Ujian TOEFL </h5>
-
-                                            <ol>
-                                                <li>Pendaftaran</li>
-                                                <ol>Pertama-tama, calon peserta TOEFL perlu melakukan pendaftaran melalui situs resmi penyelenggara ujian atau aplikasi web yang telah ditentukan. Informasi pribadi yang akurat dan lengkap diperlukan, termasuk data identitas dan alamat email yang valid.
-                                                </ol>
-
-
-                                                <li>Persyaratan Teknologi</li>
-                                                <ol>Sebelum mengikuti ujian, pastikan perangkat keras dan perangkat lunak yang digunakan memenuhi persyaratan teknis. Ini termasuk komputer atau laptop yang dapat terhubung ke internet dengan kecepatan yang memadai, perangkat lunak browser terbaru, dan kamera web yang berfungsi baik untuk ujian Speaking..
-                                                </ol>
-
-                                                <li>Waktu Ujian</li>
-                                                <ol>
-                                                    Waktu ujian TOEFL Listening selama 30 menit memerlukan manajemen waktu efektif, termasuk persiapan awal, mendengarkan dua percakapan, dan menjawab pertanyaan dengan fokus untuk meningkatkan performa.
-                                                </ol>
-
-                                            </ol>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-                    </div>
-                    <!--End Content Row -->
-
+                    </footer>
+                    <!-- End of Footer -->
                 </div>
-                <!-- End of Main Content -->
+                <!-- End of Content Wrapper -->
             </div>
-            <!--End Main Content -->
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Di bagian head, tambahkan script SweetAlert -->
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+            <script>
+                // Di bagian body, tambahkan script untuk menampilkan SweetAlert
+                <?php if (isset($downloadSpeed) && isset($uploadSpeed)) : ?>
+                    // Tampilkan nilai unduh dan unggah jika ada
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Perhatian',
+                        text: 'Mohon untuk berpindah tempat terlebih dahulu untuk memastikan jaringan Anda lebih dari 10.0',
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    });
+                <?php endif; ?>
+            </script>
+            <!-- Bootstrap core JavaScript-->
+            <script src="<?= base_url(); ?>/templates/vendor/jquery/jquery.min.js"></script>
+            <script src="<?= base_url(); ?>/templates/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="<?= base_url(); ?>/templates/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="<?= base_url(); ?>/templates/js/sb-admin-2.min.js"></script>
+
+            <!-- Page level plugins -->
+            <script src="<?= base_url(); ?>/templates/vendor/chart.js/Chart.min.js"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="<?= base_url(); ?>/templates/js/demo/chart-area-demo.js"></script>
+            <script src="<?= base_url(); ?>/templates/js/demo/chart-pie-demo.js"></script>
+
+            <!-- Page assets chart -->
+            <script src="<?= base_url(); ?>/templates/assets/demo/chart-area-demo.js"></script>
+            <script src="<?= base_url(); ?>/templates/assets/demo/chart-bar-demo.js"></script>
+
+            <!-- Page datatable -->
+            <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
 
 
+            <!-- Page level plugins -->
+            <script src="<?= base_url(); ?>/templates/vendor/datatables/jquery.dataTables.min.js"></script>
+            <script src="<?= base_url(); ?>/templates/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white pos">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Leap Surabaya 2023 </span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-        </div>
-        <!-- End of Content Wrapper -->
-    </div>
-    <!-- End of Page Wrapper -->
+            <!-- Page level custom scripts -->
+            <script src="<?= base_url(); ?>/templates/js/demo/datatables-demo.js"></script>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url(); ?>/templates/vendor/jquery/jquery.min.js"></script>
-    <script src="<?= base_url(); ?>/templates/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="<?= base_url(); ?>/templates/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="<?= base_url(); ?>/templates/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="<?= base_url(); ?>/templates/vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="<?= base_url(); ?>/templates/js/demo/chart-area-demo.js"></script>
-    <script src="<?= base_url(); ?>/templates/js/demo/chart-pie-demo.js"></script>
-
-    <!-- Page assets chart -->
-    <script src="<?= base_url(); ?>/templates/assets/demo/chart-area-demo.js"></script>
-    <script src="<?= base_url(); ?>/templates/assets/demo/chart-bar-demo.js"></script>
-
-    <!-- Page datatable -->
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-
-
-    <!-- Page level plugins -->
-    <script src="<?= base_url(); ?>/templates/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="<?= base_url(); ?>/templates/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="<?= base_url(); ?>/templates/js/demo/datatables-demo.js"></script>
-
-    <!-- Page datatable -->
-    <script src="<?= base_url(); ?>/templates/js/datatables-simple-demo.js"></script>
+            <!-- Page datatable -->
+            <script src="<?= base_url(); ?>/templates/js/datatables-simple-demo.js"></script>
 </body>
 
 </html>

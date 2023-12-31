@@ -4,30 +4,77 @@ namespace App\Controllers;
 
 class Student extends BaseController
 {
-    protected $model;
-
-    function __construct()
-    {
-        $this->model = new \App\Models\Model_Auth();
-    }
-
 
     public function index()
     {
         return view('v_student');
     }
 
-    // Participant
-    public function participant()
+
+    // Controller: Student.php
+    public function testing()
     {
-        $data['user'] = $this->model->orderBy('id')->findAll();
-        $data['nomor'] = ($this->request->getVar('page') == 1) ? '0' : $this->request->getVar('page');
-        return view('layout/admin/v_participant', $data);
+        $btnValue = $this->request->getPost('btn_value');
+
+        // Kirim nilai btn_value ke view
+        $data['btnValue'] = $btnValue;
+
+        return view('layout/student/testing', $data);
     }
 
 
-    public function testing()
+    public function handleForm()
+    {
+        $downloadSpeed = $this->request->getPost('download_speed');
+        $uploadSpeed = $this->request->getPost('upload_speed');
+        $btnValue = $this->request->getPost('btn_value');
+
+        // Ubah 10.0 sesuai dengan batasan yang diinginkan
+        if ($downloadSpeed <= 10.0 && $uploadSpeed <= 10.0) {
+            $data['btnValue'] = $btnValue;
+            $data['downloadSpeed'] = $downloadSpeed;
+            $data['uploadSpeed'] = $uploadSpeed;
+
+            return view('layout/student/testing', $data);
+        } else {
+
+            switch ($btnValue) {
+                case 'btn_reading':
+                    return redirect()->to(site_url('student/reading'));
+                case 'btn_listening':
+                    return redirect()->to(site_url('student/listening'));
+                    // Tambahkan kasus lainnya sesuai kebutuhan
+                default:
+                    // Tindakan default jika tidak ada yang cocok
+                    return redirect()->to(site_url('student/default'));
+            }
+        }
+    }
+
+
+
+    public function reading()
+    {
+        return view('layout/student/reading');
+    }
+
+    public function listening()
     {
         return view('layout/student/testing');
+    }
+
+    public function structure()
+    {
+        return view('layout/student/testing');
+    }
+
+    public function speaking()
+    {
+        return view('layout/student/testing');
+    }
+
+    public function test()
+    {
+        return view('v_student');
     }
 }

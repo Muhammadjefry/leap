@@ -5,7 +5,17 @@
 
 <div class="col-md-6 text-left text-white">
     <h3>Total Participant</h3>
-    <h5>81</h5>
+    <h2><!-- Jumlah User -->
+        <?php
+
+        // Menghitung jumlah keseluruhan mahasiswa
+        $totalStudents = count($student);
+
+        // Menampilkan jumlah keseluruhan mahasiswa
+        echo $totalStudents;
+
+
+        ?></h2>
 </div>
 
 </div>
@@ -15,6 +25,10 @@
 
     <!-- Content Row -->
     <div class="card shadow mb-5" style="margin-top:-80px">
+
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Participant Data</h6>
+        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -30,22 +44,30 @@
                     </thead>
 
                     <tbody>
-                        <?php foreach ($student as $s) :
-                            $nomor += 1; ?>
+                        <?php
+                        $no = 1;
+                        foreach ($student as $st) {
+                        ?>
 
 
                             <tr>
-                                <?php var_dump($s); ?>
-                                <td><?php echo $nomor; ?></td>
-                                <td><?php echo $s['nama'] ?></td>
+                                <td><?php echo $no++; ?></td>
+                                <td><?php echo $st['nama']; ?></td>
+                                <td><?php echo $st['jenis_k']; ?></td>
+                                <td><?php echo $st['email']; ?></td>
+                                <td><?php echo $st['perusahaan']; ?></td>
+                                <th>
+                                    <a href="<?= site_url('menu/detail/' . $st['id']) ?>" class="btn btn-sm btn-primary text-white"> <i class="fa fa-info-circle mr-2"></i>Detail</a>
+                                </th>
 
 
                             </tr>
-                        <?php endforeach; ?>
+                        <?php }; ?>
                     </tbody>
                 </table>
             </div>
         </div>
+
     </div>
 </div>
 <!-- End of Main Content -->

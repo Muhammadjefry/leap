@@ -166,8 +166,11 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid" style="margin-bottom: 10em;">
 
+
+
                     <!-- Content Row -->
                     <div class="row mb-5" style="margin-top:-80px">
+
 
                         <!-- Reading Test-->
                         <div class="col-xl-3 col-md-6 mb-4" style="text-decoration: none;z-index: 2;" id="myDiv">
@@ -188,9 +191,16 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <a href="<?= base_url('student/testing') ?>" class="btn btn-warning mt-3 text-end ">
-                                            <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
-                                        </a>
+
+                                        <!-- student/testing view -->
+                                        <form action="<?= base_url('student/testing') ?>" method="post">
+                                            <!-- Example button in your form -->
+                                            <input type="hidden" name="btn_value" value="btn_reading">
+                                            <button type="submit" class="btn btn-warning mt-3 text-end">
+                                                <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
+                                            </button>
+                                        </form>
+
                                     </div>
                                 </div>
                             </div>
@@ -215,9 +225,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <a href="index.php" onclick="removeElement()" class="btn btn-warning mt-3 text-end ">
+                                        <input type="hidden" name="btn_value" value="btn_listening">
+                                        <button class="btn btn-warning mt-3 text-end " type="submit">
                                             <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -242,9 +253,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <a href="index.php" onclick="removeElement()" class="btn btn-warning mt-3 text-end ">
+                                        <input type="hidden" name="btn_value" value="btn_structure">
+                                        <button class="btn btn-warning mt-3 text-end " type="submit">
                                             <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -269,9 +281,10 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <a href="index.php" onclick="removeElement()" class="btn btn-warning mt-3 text-end ">
+                                        <input type="hidden" name="btn_value" value="btn_speaking">
+                                        <button class="btn btn-warning mt-3 text-end " type="submit">
                                             <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -283,19 +296,10 @@
 
                             <div class="card shadow ">
                                 <div class="row g-0">
-                                    <div class="col-md-4 pl-5 pt-4">
-                                        <h3>Tentang TOEFL</h3>
-                                        <hr class="pb-5">
-                                        <br>
 
-                                        <h3>Tentang Tes</h3>
-                                        <hr>
-                                    </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-12">
                                         <div class="card-body">
-                                            <h5 class="card-title">Penejelasan TOEFL </h5>
-                                            <p class="card-text">TOEFL, atau Test of English as a Foreign Language, adalah ujian standar internasional yang dirancang untuk mengukur kemampuan bahasa Inggris seseorang, khususnya bagi mereka yang bukan penutur asli. Ujian ini terdiri dari empat komponen utama, yaitu Speaking, Reading, Listening, dan Structure. Untuk mengikuti ujian TOEFL melalui aplikasi web, ada beberapa syarat dan ketentuan yang perlu dipahami dengan baik.
-                                            </p>
+
                                             <h5 class="card-title">Syarat dan Ketentuan Mengikuti Ujian TOEFL </h5>
 
                                             <ol>

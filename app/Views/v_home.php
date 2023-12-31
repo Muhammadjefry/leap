@@ -29,7 +29,16 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 mt-3 font-weight-bold text-gray-800">
-                                        <span class="h1">51</span>
+                                        <span class="h1">
+                                            <!-- Jumlah Pria -->
+                                     <?php
+                                        $targetLevel = 'Pria';
+                                        $userLevels = array_column($student, 'jenis_k');
+
+                                        $levelCounts = array_count_values($userLevels);
+                                        echo $levelCounts[$targetLevel] ?? 0;
+                                        ?>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +62,15 @@
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800 mt-3">
-                                        <span class="h1">34</span>
+                                        <span class="h1">                                        <span class="h1">
+                                            <!-- Jumlah Pria -->
+                                     <?php
+                                        $targetLevel = 'Wanita';
+                                        $userLevels = array_column($student, 'jenis_k');
+
+                                        $levelCounts = array_count_values($userLevels);
+                                        echo $levelCounts[$targetLevel] ?? 0;
+                                        ?></span>
                                     </div>
                                 </div>
                             </div>
