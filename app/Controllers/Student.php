@@ -30,24 +30,32 @@ class Student extends BaseController
         $btnValue = $this->request->getPost('btn_value');
 
         // Ubah 10.0 sesuai dengan batasan yang diinginkan
-        if ($downloadSpeed <= 10.0 && $uploadSpeed <= 10.0) {
+        if ($downloadSpeed >= 10.0 && $uploadSpeed >= 10.0) {
+
+            switch ($btnValue) {
+                case 'btn_reading':
+                    return redirect()->to(site_url('student/reading'));
+                    break;
+                case 'btn_listening':
+                    return redirect()->to(site_url('student/listening'));
+                    break;
+                case 'btn_structure':
+                    return redirect()->to(site_url('student/structure'));
+                    break;
+                case 'btn_speaking':
+                    return redirect()->to(site_url('student/speaking'));
+                    break;
+                default:
+                    // Tindakan default jika tidak ada yang cocok
+                    return redirect()->to(site_url('student/default'));
+            }
+        } else {
+
             $data['btnValue'] = $btnValue;
             $data['downloadSpeed'] = $downloadSpeed;
             $data['uploadSpeed'] = $uploadSpeed;
 
             return view('layout/student/testing', $data);
-        } else {
-
-            switch ($btnValue) {
-                case 'btn_reading':
-                    return redirect()->to(site_url('student/reading'));
-                case 'btn_listening':
-                    return redirect()->to(site_url('student/listening'));
-                    // Tambahkan kasus lainnya sesuai kebutuhan
-                default:
-                    // Tindakan default jika tidak ada yang cocok
-                    return redirect()->to(site_url('student/default'));
-            }
         }
     }
 
@@ -60,17 +68,17 @@ class Student extends BaseController
 
     public function listening()
     {
-        return view('layout/student/testing');
+        return view('layout/student/listening');
     }
 
     public function structure()
     {
-        return view('layout/student/testing');
+        return view('layout/student/structure');
     }
 
     public function speaking()
     {
-        return view('layout/student/testing');
+        return view('layout/student/speaking');
     }
 
     public function test()

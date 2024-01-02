@@ -4,7 +4,7 @@
 <?= $this->section('content'); ?>
 
 <div class="col-md-6 text-left text-white">
-    <h3>Total Participant</h3>
+    <h3>Participant</h3>
     <h2><!-- Jumlah User -->
         <?php
 
@@ -21,7 +21,7 @@
 </div>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 20em;">
 
     <!-- Content Row -->
     <div class="card shadow mb-5" style="margin-top:-80px">

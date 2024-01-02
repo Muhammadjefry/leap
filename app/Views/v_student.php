@@ -192,9 +192,9 @@
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
 
-                                        <!-- student/testing view -->
+                                        <!-- student test bottom  -->
                                         <form action="<?= base_url('student/testing') ?>" method="post">
-                                            <!-- Example button in your form -->
+
                                             <input type="hidden" name="btn_value" value="btn_reading">
                                             <button type="submit" class="btn btn-warning mt-3 text-end">
                                                 <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
@@ -225,10 +225,14 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <input type="hidden" name="btn_value" value="btn_listening">
-                                        <button class="btn btn-warning mt-3 text-end " type="submit">
-                                            <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
-                                        </button>
+                                        <!-- student test bottom  -->
+                                        <form action="<?= base_url('student/testing') ?>" method="post">
+
+                                            <input type="hidden" name="btn_value" value="btn_listening">
+                                            <button type="submit" class="btn btn-warning mt-3 text-end">
+                                                <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -253,10 +257,14 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <input type="hidden" name="btn_value" value="btn_structure">
-                                        <button class="btn btn-warning mt-3 text-end " type="submit">
-                                            <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
-                                        </button>
+                                        <!-- student test bottom  -->
+                                        <form action="<?= base_url('student/testing') ?>" method="post">
+
+                                            <input type="hidden" name="btn_value" value="btn_structure">
+                                            <button type="submit" class="btn btn-warning mt-3 text-end">
+                                                <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -281,10 +289,14 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">
-                                        <input type="hidden" name="btn_value" value="btn_speaking">
-                                        <button class="btn btn-warning mt-3 text-end " type="submit">
-                                            <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
-                                        </button>
+                                        <!-- student test bottom  -->
+                                        <form action="<?= base_url('student/testing') ?>" method="post">
+
+                                            <input type="hidden" name="btn_value" value="btn_speaking">
+                                            <button type="submit" class="btn btn-warning mt-3 text-end">
+                                                <span>Detail</span><i class="fa fa-arrow-right ml-3"></i>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

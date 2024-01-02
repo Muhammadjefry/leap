@@ -3,9 +3,10 @@
 
 <?= $this->section('content'); ?>
 
-<div class="col-md-6 text-left text-white">
+
+<div class="col-md-12 text-left text-white d-flex justify-content-between">
     <h3>Intruksi</h3>
-    <h5>Koneksi internet</h5>
+    <a href="<?= base_url('student/index') ?>" class="btn btn btn-warning text-dark"> <i class="fas fa-undo mr-2"></i>Back</a>
 </div>
 
 </div>
@@ -30,7 +31,7 @@
                                     <li>Klik Link di bawah ini, <br>
                                         <a href="https://www.speedtest.net/id" target="_blank">https://www.speedtest.net/id</a>
                                     </li>
-                                    <li>Kemudian untuk memulainya tekan tombol Mulai/Go, tunggu sampai muncul nilai UNDUH mbps & UNGGAH mbps </li>
+                                    <li>Kemudian tekan tombol Mulai/Go, tunggu sampai muncul nilai UNDUH mbps & UNGGAH mbps </li>
                                     <li>Copy nilai UNDUH mbps & UNGGAH mbps dan letakan sesuai arahan di bawah, dan pastikan nilainya lebih dari 10.0, jika kurang dari 10.0 untuk berpindah tempat terlebih dahulu dan periksa kembali jaringan internet anda.</li>
                                 </ol>
                         </div>

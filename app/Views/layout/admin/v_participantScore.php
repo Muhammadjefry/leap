@@ -11,7 +11,7 @@
 </div>
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 10em;">
 
     <!-- Content Row -->
     <div class="row mb-5" style="margin-top:-80px">
