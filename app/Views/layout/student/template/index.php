@@ -32,6 +32,16 @@
             transform-origin: left;
             /* Mengatur titik asal transformasi ke kiri */
         }
+
+        .page-content {
+            background: lightgrey;
+            display: inline-block;
+            padding: 15px;
+            width: 100%;
+            text-align: center;
+            height: 150px;
+            margin-bottom: 10px;
+        }
     </style>
 
 </head>
@@ -112,6 +122,12 @@
             <!-- Di bagian head, tambahkan script SweetAlert -->
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+            <!-- Letakkan ini di dalam bagian head -->
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+            <script src="<?= base_url(); ?>/templates/js/demo/datatables-demo.js"></script>
             <script>
                 // Di bagian body, tambahkan script untuk menampilkan SweetAlert
                 <?php if (isset($downloadSpeed) && isset($uploadSpeed)) : ?>
@@ -124,6 +140,45 @@
                         confirmButtonText: 'OK'
                     });
                 <?php endif; ?>
+
+                $('#pagination-demo').twbsPagination({
+                    totalPages: 35,
+                    visiblePages: 7,
+                    onPageClick: function(event, page) {
+                        $('#page-content').text('Page ' + page);
+                    }
+                });
+                // var sec = 20;
+                // var countDiv = document.getElementById("timer");
+                // var secpass;
+                // countDown = setInterval(function() {
+                // 'use strict';
+
+                // secpass();
+                // }, 1000);
+
+                // function down() {
+                // window.location.href = '?= base_url('student/index') ?>';
+                // }
+
+                // function secpass() {
+                // 'use strict';
+
+                // var min = Math.floor(sec / 60),
+                // remSec = sec % 60;
+
+                // if (remSec < 10) { // remSec='0' + remSec; // } // if (min < 10) { // min='0' + min; // } // countDiv.innerHTML=min + ":" + remSec; // if (sec> 0) {
+
+                // sec = sec - 1;
+
+                // } else {
+
+                // clearInterval(countDown);
+
+                // down();
+
+                // }
+                // }
             </script>
             <!-- Bootstrap core JavaScript-->
             <script src="<?= base_url(); ?>/templates/vendor/jquery/jquery.min.js"></script>
@@ -146,9 +201,6 @@
             <script src="<?= base_url(); ?>/templates/assets/demo/chart-area-demo.js"></script>
             <script src="<?= base_url(); ?>/templates/assets/demo/chart-bar-demo.js"></script>
 
-            <!-- Page datatable -->
-            <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-
 
             <!-- Page level plugins -->
             <script src="<?= base_url(); ?>/templates/vendor/datatables/jquery.dataTables.min.js"></script>
@@ -156,9 +208,6 @@
 
             <!-- Page level custom scripts -->
             <script src="<?= base_url(); ?>/templates/js/demo/datatables-demo.js"></script>
-
-            <!-- Page datatable -->
-            <script src="<?= base_url(); ?>/templates/js/datatables-simple-demo.js"></script>
 </body>
 
 </html>
