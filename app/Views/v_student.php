@@ -375,15 +375,15 @@
     <script src="<?= base_url(); ?>/templates/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="<?= base_url(); ?>/templates/vendor/chart.js/Chart.min.js"></script>
+    <!-- <script src="<?= base_url(); ?>/templates/vendor/chart.js/Chart.min.js"></script> -->
 
     <!-- Page level custom scripts -->
-    <script src="<?= base_url(); ?>/templates/js/demo/chart-area-demo.js"></script>
-    <script src="<?= base_url(); ?>/templates/js/demo/chart-pie-demo.js"></script>
+    <!-- <script src="<?= base_url(); ?>/templates/js/demo/chart-area-demo.js"></script> -->
+    <!-- <script src="<?= base_url(); ?>/templates/js/demo/chart-pie-demo.js"></script> -->
 
     <!-- Page assets chart -->
-    <script src="<?= base_url(); ?>/templates/assets/demo/chart-area-demo.js"></script>
-    <script src="<?= base_url(); ?>/templates/assets/demo/chart-bar-demo.js"></script>
+    <!-- <script src="<?= base_url(); ?>/templates/assets/demo/chart-area-demo.js"></script> -->
+    <!-- <script src="<?= base_url(); ?>/templates/assets/demo/chart-bar-demo.js"></script> -->
 
     <!-- Page datatable -->
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>

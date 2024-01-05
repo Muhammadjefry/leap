@@ -37,7 +37,7 @@ class Student extends BaseController
                     return redirect()->to(site_url('student/reading'));
                     break;
                 case 'btn_listening':
-                    return redirect()->to(site_url('student/listening'));
+                    return redirect()->to(site_url('student/cek_listening'));
                     break;
                 case 'btn_structure':
                     return redirect()->to(site_url('student/structure'));
@@ -64,6 +64,11 @@ class Student extends BaseController
     public function reading()
     {
         return view('layout/student/reading');
+    }
+
+    public function cek_listening()
+    {
+        return view('layout/student/cek_listening');
     }
 
     public function listening()

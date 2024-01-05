@@ -14,7 +14,7 @@
     <!-- Custom fonts for this template-->
     <link href="<?= base_url(); ?>/templates/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url(); ?>/templates/https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <!-- Custom styles for this template-->
     <link href="<?= base_url(); ?>/templates/css/sb-admin-2.min.css" rel="stylesheet">
     <style>
@@ -32,16 +32,6 @@
             transform-origin: left;
             /* Mengatur titik asal transformasi ke kiri */
         }
-
-        .page-content {
-            background: lightgrey;
-            display: inline-block;
-            padding: 15px;
-            width: 100%;
-            text-align: center;
-            height: 150px;
-            margin-bottom: 10px;
-        }
     </style>
 
 </head>
@@ -57,9 +47,11 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-body topbar static-top nav" style="background-image: linear-gradient(to left, #0097ff,  #0367ac  );z-index: 1;box-shadow: -10px 0 20px #000;">
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none bg-transparent rounded-circle mr-3">
-                        <i class="fa fa-bars text-white"></i>
-                    </button>
+
+                    <a class="nav-link" href="#">
+                        <span style="font-size: 0.8em;"> <img src="<?= base_url() ?>/templates/img/leap1.png" alt="" class="img-fluid" width="100" /></span>
+                    </a>
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -119,17 +111,47 @@
                 <i class="fas fa-angle-up"></i>
             </a>
 
+
             <!-- Di bagian head, tambahkan script SweetAlert -->
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-            <!-- Letakkan ini di dalam bagian head -->
             <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="<?= base_url(); ?>/templates/vendor/jquery-easing/jquery.easing.min.js"></script>
+            <script src="<?= base_url(); ?>/templates/js/sb-admin-2.min.js"></script>
+
+            <!-- <script src="<?= base_url(); ?>/templates/js/demo/datatables-demo.js"></script> -->
+            <!-- <script src="<?= base_url(); ?>/templates/js/listening.js"></script> -->
+            <script src="<?= base_url(); ?>/templates/js/test.js"></script>
+            <!-- Bootstrap core JavaScript-->
+            <!-- <script src="<?= base_url(); ?>/templates/vendor/jquery/jquery.min.js"></script> -->
+            <!-- <script src="<?= base_url(); ?>/templates/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+            <!-- Core plugin JavaScript-->
 
 
-            <script src="<?= base_url(); ?>/templates/js/demo/datatables-demo.js"></script>
+            <!-- Custom scripts for all pages-->
+
+            <!-- Page level plugins -->
+            <!-- <script src="<?= base_url(); ?>/templates/vendor/chart.js/Chart.min.js"></script> -->
+
+            <!-- Page level custom scripts -->
+            <!-- <script src="<?= base_url(); ?>/templates/js/demo/chart-area-demo.js"></script> -->
+            <!-- <script src="<?= base_url(); ?>/templates/js/demo/chart-pie-demo.js"></script> -->
+
+            <!-- Page assets chart -->
+            <!-- <script src="<?= base_url(); ?>/templates/assets/demo/chart-area-demo.js"></script> -->
+            <!-- <script src="<?= base_url(); ?>/templates/assets/demo/chart-bar-demo.js"></script> -->
+
+
+            <!-- Page level plugins -->
+            <!-- <script src="<?= base_url(); ?>/templates/vendor/datatables/jquery.dataTables.min.js"></script> -->
+            <!-- <script src="<?= base_url(); ?>/templates/vendor/datatables/dataTables.bootstrap4.min.js"></script> -->
+
+            <!-- Page level custom scripts -->
+            <!-- <script src="<?= base_url(); ?>/templates/js/demo/datatables-demo.js"></script> -->
+            <script src="<?= base_url('path/to/main.js') ?>"></script>
+
             <script>
-                // Di bagian body, tambahkan script untuk menampilkan SweetAlert
                 <?php if (isset($downloadSpeed) && isset($uploadSpeed)) : ?>
                     // Tampilkan nilai unduh dan unggah jika ada
                     Swal.fire({
@@ -141,73 +163,211 @@
                     });
                 <?php endif; ?>
 
-                $('#pagination-demo').twbsPagination({
-                    totalPages: 35,
-                    visiblePages: 7,
-                    onPageClick: function(event, page) {
-                        $('#page-content').text('Page ' + page);
+                function cek_listening() {
+                    document.getElementById('ya').addEventListener('change', function() {
+                        if (this.checked) {
+                            window.location.href = 'listening';
+                        }
+                    });
+
+                }
+
+
+                function reading() {
+
+                    var sec = 1800;
+                    var countDiv = document.getElementById("timer1");
+                    var secpass;
+                    countDown = setInterval(function() {
+                        'use strict';
+
+                        secpass();
+                    }, 1000);
+
+                    function done() {
+                        window.location.href = base_url('student / index');
                     }
-                });
-                // var sec = 20;
-                // var countDiv = document.getElementById("timer");
-                // var secpass;
-                // countDown = setInterval(function() {
-                // 'use strict';
 
-                // secpass();
-                // }, 1000);
+                    function secpass() {
+                        'use strict';
 
-                // function down() {
-                // window.location.href = '?= base_url('student/index') ?>';
-                // }
+                        var min = Math.floor(sec / 60),
+                            remSec = sec % 60;
 
-                // function secpass() {
-                // 'use strict';
+                        if (remSec < 10) {
+                            remSec = '0' + remSec;
+                        }
+                        if (min < 10) {
+                            min = '0' + min;
+                        }
+                        countDiv.innerHTML = min + ":" + remSec;
+                        if (sec > 0) {
 
-                // var min = Math.floor(sec / 60),
-                // remSec = sec % 60;
+                            sec = sec - 1;
 
-                // if (remSec < 10) { // remSec='0' + remSec; // } // if (min < 10) { // min='0' + min; // } // countDiv.innerHTML=min + ":" + remSec; // if (sec> 0) {
+                        } else {
 
-                // sec = sec - 1;
+                            clearInterval(countDown);
 
-                // } else {
+                            done();
 
-                // clearInterval(countDown);
+                        }
+                    }
 
-                // down();
+                    const prev = document.querySelector("#prev");
+                    const next = document.querySelector("#next");
+                    var exam = 0;
+                    var artikel = 0;
 
-                // }
-                // }
+                    function quetion() {
+                        $(".exam").hide();
+                        $(".exam:eq(" + exam + ")").show();
+                    }
+
+                    quetion();
+
+                    function blog() {
+                        $(".artikel").hide();
+                        $(".artikel:eq(" + artikel + ")").show();
+                    }
+
+                    blog();
+
+
+
+                    next.addEventListener("click", function() {
+                        if (exam == $(".exam").length - 1) {
+                            exam = end;
+
+                        } else if (exam == 0) {
+                            artikel++;
+                            exam++;
+                        } else if (exam == 1) {
+                            artikel++;
+                            exam++;
+                        } else if (exam == 8) {
+                            artikel++;
+                            exam++;
+                        } else if (exam == 18) {
+                            artikel++;
+                            exam++;
+                        } else {
+                            exam++;
+                        }
+                        quetion();
+                        blog();
+
+                    });
+
+                    prev.addEventListener("click", function() {
+                        if (exam == 0) {
+                            exam = end;
+                        } else if (exam == 1) {
+                            artikel--;
+                            exam--;
+                        } else if (exam == 2) {
+                            artikel--;
+                            exam--;
+                        } else if (exam == 9) {
+                            artikel--;
+                            exam--;
+                        } else if (exam == 19) {
+                            artikel--;
+                            exam--;
+                        } else {
+                            exam--;
+                        }
+                        quetion();
+                        blog();
+
+                    });
+                }
+
+                function structure() {
+
+                    var sec = 900;
+                    var countDiv = document.getElementById("timer_structure");
+                    var secpass;
+                    countDown = setInterval(function() {
+                        'use strict';
+
+                        secpass();
+                    }, 1000);
+
+                    function done() {
+                        window.location.href = base_url('student / index');
+                    }
+
+                    function secpass() {
+                        'use strict';
+
+                        var min = Math.floor(sec / 60),
+                            remSec = sec % 60;
+
+                        if (remSec < 10) {
+                            remSec = '0' + remSec;
+                        }
+                        if (min < 10) {
+                            min = '0' + min;
+                        }
+                        countDiv.innerHTML = min + ":" + remSec;
+                        if (sec > 0) {
+
+                            sec = sec - 1;
+
+                        } else {
+                            clearInterval(countDown);
+                            done();
+
+                        }
+                    }
+
+                    const prev = document.querySelector("#prev_S");
+                    const next = document.querySelector("#next_S");
+                    var str = 0;
+
+                    function quetion() {
+                        $(".str").hide();
+                        $(".str:eq(" + str + ")").show();
+                    }
+                    quetion();
+
+                    next.addEventListener("click", function() {
+                        if (str == $(".str").length - 1) {
+                            str = end;
+                        } else {
+                            str++;
+                        }
+                        quetion();
+                    });
+
+                    prev.addEventListener("click", function() {
+                        if (str == 0) {
+                            str = end;
+                        } else {
+                            str--;
+                        }
+                        quetion();
+
+                    });
+                }
+
+
+                if (window.location.pathname.includes('/student/reading')) {
+                    // Panggil fungsi showSweetAlert jika di halaman /student/listening
+
+                    reading();
+
+
+                } else if (window.location.pathname.includes('/student/cek_listening')) {
+
+                    cek_listening();
+                } else if (window.location.pathname.includes('/student/structure')) {
+
+                    structure();
+                }
             </script>
-            <!-- Bootstrap core JavaScript-->
-            <script src="<?= base_url(); ?>/templates/vendor/jquery/jquery.min.js"></script>
-            <script src="<?= base_url(); ?>/templates/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="<?= base_url(); ?>/templates/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="<?= base_url(); ?>/templates/js/sb-admin-2.min.js"></script>
-
-            <!-- Page level plugins -->
-            <script src="<?= base_url(); ?>/templates/vendor/chart.js/Chart.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="<?= base_url(); ?>/templates/js/demo/chart-area-demo.js"></script>
-            <script src="<?= base_url(); ?>/templates/js/demo/chart-pie-demo.js"></script>
-
-            <!-- Page assets chart -->
-            <script src="<?= base_url(); ?>/templates/assets/demo/chart-area-demo.js"></script>
-            <script src="<?= base_url(); ?>/templates/assets/demo/chart-bar-demo.js"></script>
-
-
-            <!-- Page level plugins -->
-            <script src="<?= base_url(); ?>/templates/vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="<?= base_url(); ?>/templates/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="<?= base_url(); ?>/templates/js/demo/datatables-demo.js"></script>
 </body>
 
 </html>
